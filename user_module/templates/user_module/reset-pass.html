@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+ {% block title %}
+          بازیابی رمز
+ {% endblock %}
+
+
+  {% block style %}
+  <link rel="stylesheet" href="{% static 'style/login.css' %}" />
+  <link rel="stylesheet" href="{% static 'style/toast.css' %}" />
+
+   {% endblock %}
+
+ {% block content %}
+
+
+
+
+
+        <div class="container">
+        <div class="shadow"></div>
+
+
+
+        <form class="login-form"  method="post">
+        {% csrf_token %}
+
+              {% for filds in reset_pass_form %}
+            {{ filds.label_tag }}
+            {{ filds }}
+                  {{ filds.errors }}
+
+        {% endfor %}
+            <button type="submit">ورود</button>
+
+
+        </form>
+    </div>
+
+     {% endblock %}
+
+{% block javascript %}
+
+    <script src="{% static 'js/error_toast.js' %}"></script>
+
+{% endblock %}
+
+
+
+
+

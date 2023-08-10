@@ -1,0 +1,76 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    background-image: url('../images/signup.jpg');
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.shadow{
+position: absolute;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.4);
+
+}
+
+.reset-pass-form{
+    position: absolute;
+    border-radius: 20px;
+    margin:30% 15%;
+    width: 70vw;
+    min-height: 200px;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+.reset-pass-form input {
+    font-size: 20px;
+    border-radius: 10px;
+    outline: none;
+
+}
+.reset-pass-form input:focus{
+border: 3px solid #5390d9;
+}
+
+
+.reset-pass-form button{
+    outline: none;
+    border: none;
+    background-color: #008000;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+
+
+.log-back{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 200px;
+    
+}
+
+.log-back-btn{
+    text-decoration: none;
+    color: #ee6055;
+    font-size: 18px;
+}

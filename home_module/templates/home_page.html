@@ -1,0 +1,91 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'style/main.css' %}">
+      <link rel="stylesheet" href="{% static 'style/header.css' %}">
+      <link rel="stylesheet" href="{% static 'fonts/fontawosem/all.css' %}">
+{% endblock %}
+
+<title>{% block title %}LiloTrain{% endblock %}</title>
+
+{% block content %}
+    <header>
+        <div class="nav-container">
+
+
+
+             <div class="logo">
+                <i class="fa-solid fa-graduation-cap fa-lg graduate-hat"></i>
+                <h2>Lilotrain</h2>
+            </div>
+            <nav class="navbar">
+                <ul>
+                     <li>
+                        <a href="{% url 'register_page' %}">
+                        <button class="signup-login-btn">ورود/ثبت نام</button>
+                     </a>
+                    </li>
+                     <li  class="icon-text-container">
+                        <i class="fa-solid fa-cart-shopping fa-flip-horizontal "></i>
+                        <a href="">سبد خرید</a>
+                    </li>
+
+                     <li  class="icon-text-container">
+                        <i class="fa-solid fa-shop "></i>
+                        <a href="#product">محصولات</a>
+                    </li>
+                     <li  class="icon-text-container">
+                        <i class="fa-solid fa-house "></i>
+                        <a href="{% url 'home_page' %}">خانه</a>
+                    </li>
+
+
+
+
+
+
+
+                </ul>
+            </nav>
+
+        </div>
+        <div class="img-header">
+        </div>
+    </header>
+
+
+    <p class="describ">
+
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque dolorem ex excepturi maiores molestiae molestias, optio provident reprehenderit sint vel.
+    </p>
+
+
+
+
+    <main>
+        <h2 id="product" class="product-lable">محصولات</h2>
+        <section class="products_carts">
+            <a href="{% url 'product-detail' products.slug %}" class="carts">
+            <div>
+                    <h3 class="product-name">Grammer</h3>
+                    <img src="./images/products-img/1.jpeg" alt="image" class="product-image">
+                    <p class="product-description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوا</p>
+                    <h3 class="product-price">400$</h3>
+                </div>
+            </a>
+           
+        </section>
+    </main>
+
+  <footer>
+
+    </footer>
+{% endblock %}
+
+{% block javascript %}
+
+
+    <script src="{% static 'fonts/fontawosem/all.js' %}"></script>
+</script>
+{% endblock %}

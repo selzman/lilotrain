@@ -1,0 +1,160 @@
+/*erroe toast*/
+
+
+.alert-boxs-error{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: auto;
+  border-radius: 10px;
+  padding: 10px;
+  background: rgb(255, 1, 1);
+  color: #fff;
+  font-size: 19px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 10;
+}
+
+.alert-boxs-error .close-btn {
+  cursor: pointer;
+    font-size: larger;
+    margin: 0 10px;
+}
+
+
+.alert-boxs-error.hide {
+  display: none;
+
+}
+
+
+
+
+
+
+.alert-boxs-error.show {
+  position: fixed;
+  animation: showAlert 1s ease forwards;
+  -webkit-animation: showAlert 1s ease forwards;
+}
+
+.errorlist li{
+    list-style-type: none;
+}
+
+/* succes toast */
+
+
+.hidden {
+  visibility: hidden;
+}
+
+.alert-boxs {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: auto;
+  border-radius: 10px;
+  padding: 10px;
+  background: rgb(1, 255, 1);
+  color: #fff;
+  font-size: 19px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 10;
+}
+
+.alert-boxs .close-btn {
+  cursor: pointer;
+}
+
+
+.alert-boxs.hide {
+  display: none;
+
+}
+
+
+
+
+
+
+.alert-boxs.show {
+  position: fixed;
+  animation: showAlert 1s ease forwards;
+  -webkit-animation: showAlert 1s ease forwards;
+}
+
+@keyframes showAlert {
+  0% {
+      transform: translateX(100%);
+      -webkit-transform: translateX(100%);
+      -moz-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+      -o-transform: translateX(100%);
+  }
+
+  40% {
+      transform: translateX(-15%);
+      -webkit-transform: translateX(-15%);
+      -moz-transform: translateX(-15%);
+      -ms-transform: translateX(-15%);
+      -o-transform: translateX(-15%);
+  }
+
+  80% {
+      transform: translateX(0%);
+      -webkit-transform: translateX(0%);
+      -moz-transform: translateX(0%);
+      -ms-transform: translateX(0%);
+      -o-transform: translateX(0%);
+  }
+
+  100% {
+      transform: translateX(-5%);
+      -webkit-transform: translateX(-5%);
+      -moz-transform: translateX(-5%);
+      -ms-transform: translateX(-5%);
+      -o-transform: translateX(-5%);
+  }
+}
+
+
+.alert-boxs.show::before{
+  content: '';
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background-color: #67f55a;
+  bottom: 1px;
+  border-radius: 10px;
+  left: 6px;
+  animation: hideMaster 5s linear;
+  -webkit-animation: hideMaster 5s linear;
+}
+
+@keyframes hideMaster{
+  0%{
+      width: 100%;
+  }
+  100%{
+      width: 0;
+  }
+}
+
+.my-btn {
+
+  font-size: 20px;
+  color: #fff;
+  background: #d13100;
+  border: none;
+  width: 200px;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+
+

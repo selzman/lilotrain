@@ -1,0 +1,167 @@
+@font-face {
+  font-family: "iransans";
+  src: url("../fonts/woff/IRANSansXFaNum-Black.woff") format("woff"),
+    url("../fonts/woff/IRANSansXFaNum-Bold.woff") format("woff"),
+    url("../fonts/woff/IRANSansXFaNum-DemiBold.woff") format("woff"),
+    url("../fonts/woff/IRANSansXFaNum-ExtraBold.woff") format("woff"),
+    url("../fonts/woff/IRANSansXFaNum-Light.woff") format("woff"),
+    url("../fonts/woff/IRANSansXFaNum-Medium.woff") format("woff"),
+    url("../fonts/woff/IRANSansXFaNum-Regular.woff") format("woff"),
+    url("../fonts/woff/IRANSansXFaNum-UltraLight.woff") format("woff");
+}
+
+@font-face {
+  font-family: "iransans-Thin";
+  src: url("../fonts/woff/IRANSansXFaNum-Regular.woff") format("woff");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*
+header witout photo */
+
+header {
+  width: 100%;
+  height: 65vh;
+  color: white;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  height: 90px;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin: 20px 5%;
+  border-radius: 20px;
+}
+.navbar {
+  font-family: "iransans", Courier, monospace;
+  margin-left: 100px;
+  font-size: 15px;
+
+
+}
+
+.navbar ul {
+  display: flex;
+justify-content: space-evenly;
+align-items: center;
+width: 100%;
+direction: rtl;
+font-size: 12px;
+  margin-right: 20px;
+
+}
+
+
+.navbar ul li a,
+.navbar ul li {
+  color: white;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.navbar ul li:hover {
+  transform: translateY(-5px);
+}
+
+.signup-login-btn {
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  background: white;
+  color: #8731ff;
+  font-family: "iransans", Courier, monospace;
+  font-size: 15px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.signup-login-btn:hover {
+  transform: translateY(-2.5px);
+}
+
+.navbar {
+  position: relative;
+}
+.icon-text-container {
+  margin-right: 3px;
+}
+
+.logo {
+  position: relative;
+  color: #8731ff;
+  font-size: 16px;
+  font-family: "iransans-Thin", Courier, monospace;
+  margin-left: 20px;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  height: 60px;
+  direction: ltr;
+}
+
+.logo .graduate-hat {
+  bottom: 3px;
+  left: 0;
+  position: relative;
+}
+
+/* img of header */
+
+.img-header {
+  background-image: url("../images/28926851_7498494.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px auto;
+  width: 600px;
+  height: 350px;
+}
+
+/* describ */
+
+.describ {
+    color: aliceblue;
+    line-height: 25px;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 10px;
+  text-align: justify;
+  margin: 20px auto;
+  width: 400px;
+
+  padding: 10px;
+}
+
+@media screen and (max-width: 667px) {
+  .navbar ul {
+    font-size: 12px;
+  }
+
+  .signup-login-btn {
+    font-size: 12px;
+  }
+  .img-header {
+    width: 450px;
+    height: 350px;
+
+    margin: 10px auto;
+  }
+  .logo {
+    font-size: 12px;
+  }
+}

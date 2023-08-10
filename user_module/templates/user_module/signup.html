@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+  {% block style %}
+  <link rel="stylesheet" href="{% static 'style/toast.css' %}">
+  <link rel="stylesheet" href="{% static 'style/signup.css' %}" />
+
+   {% endblock %}
+
+      {% block title %}
+          ثبت نام
+      {% endblock %}
+
+
+
+
+
+
+
+  {% block content %}
+
+
+
+
+    <div class="alert-boxs hidden">
+
+      {% if messages %}
+      {% for message in messages %}
+       {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+      <p id="msg">{{ message }}</p>
+      {% endif %}
+      {% endfor %}
+       {% endif %}
+     <span class="close-btn">&times;</span>
+    </div>
+
+
+    <div class="container">
+      <div class="shadow"></div>
+
+      <form class="signup-form" action="" method="post">
+          {% csrf_token %}
+
+          {% for fileds in register_form %}
+              {{ fileds.label_tag }}
+              {{ fileds }}
+              {{ fileds.errors }}
+          {% endfor %}
+
+        <button onclick="tese()" id="testalert" class="submit" type="submit">ثبت نام</button>
+
+        <div class="log-back">
+          <a class="log-back-btn" href="{% url 'login_page' %}">ورود</a>
+
+          <p>حساب کاربری دارید؟</p>
+        </div>
+      </form>
+
+    </div>
+
+
+
+{% endblock %}
+{% block javascript %}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{% static 'js/signup.js' %}"></script>
+
+    <script src="{% static 'js/iquery.js' %}"></script>
+    <script src="{% static 'fonts/fontawosem/all.js' %}"></script>
+    <script src="{% static 'js/toast.js' %}"></script>
+
+
+
+
+
+{% endblock %}
+

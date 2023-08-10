@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load jalali_tags %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'style/detail.css' %}">
+      <link rel="stylesheet" href="{% static 'style/header.css' %}">
+      <link rel="stylesheet" href="{% static 'fonts/fontawosem/all.css' %}">
+{% endblock %}
+
+
+
+{% block content %}
+
+    <header>
+        <div class="nav-container">
+
+
+
+             <div class="logo">
+                <i class="fa-solid fa-graduation-cap fa-lg graduate-hat"></i>
+                <h2>Lilotrain</h2>
+            </div>
+            <nav class="navbar">
+                <ul>
+                     <li>
+                        <a href="{% url 'register_page' %}">
+                        <button class="signup-login-btn">ورود/ثبت نام</button>
+                     </a>
+                    </li>
+                     <li  class="icon-text-container">
+                        <i class="fa-solid fa-cart-shopping fa-flip-horizontal "></i>
+                        <a href="">سبد خرید</a>
+                    </li>
+
+                     <li  class="icon-text-container">
+                        <i class="fa-solid fa-shop "></i>
+                        <a href="#product">محصولات</a>
+                    </li>
+                     <li  class="icon-text-container">
+                        <i class="fa-solid fa-house "></i>
+                        <a href="{% url 'home_page' %}">خانه</a>
+                    </li>
+
+
+
+
+
+
+
+                </ul>
+            </nav>
+
+        </div>
+        <div class="img-header">
+        </div>
+    </header>
+
+
+
+
+
+    <form action="" method="post">
+    {% for newcomment in newcomments %}
+    {{ newcomment }}
+    {% endfor %}
+
+    </form>
+
+
+    <section id="product" class="product-container">
+    {% for product in Products %}
+
+
+        <h3 class="product-name-detail">{{ product.name }}</h3>
+        <img src="{{ product.image.url }}" alt="image" class="product-image-detail">
+       {{ product.description |safe }}
+        <h3 class="product-price-detail"><span>تومان</span>{{ product.price }} </h3>
+        <input class="add-to-shoping-cart" type="button" value="افزودن به سبد خرید">
+    {% endfor %}
+    </section>
+
+
+    <h2 class="comments-title">   ({{ Comments.count }}) تعداد نظرات</h2>
+
+    {% for comment in Comments %}
+        <div class="comment-container">
+                <div class="detail-comments">
+
+      <div class="main-detail">
+        <img src="{% static 'images/useravatar.svg' %}" alt="user avatar" />
+        <h3 class="comment-name">{{ comment.user }}</h3>
+        <p class="time">{{ comment.create_date |to_jalali }}</p>
+      </div>
+    </div>
+
+    <div class="comment">
+      <p>{{ comment.text }}</p>
+    </div>
+
+    <input class="btn_reply" type="button" value="reply" />
+
+    <form
+    id="reply_new_comments"
+      class="reply_new_comments"
+      method="post"
+      action=""
+
+    >
+    <input type="hidden" name="comment_id">
+
+      <button
+        id="submite-send-reply"
+        type="submit"
+        class="send-comment">
+        send
+      </button>
+    </form>
+
+{% for replycomment in comment.comment_set.all %}
+ <div class="show_reply">
+            <div class="reply_detail_avatar">
+            <img src="{% static 'images/reply avata.jpg' %} "alt="user avatar" />
+            <h3 class="comment-name"> {{ replycomment.user}}</h3>
+            <p class="time">{{ replycomment.create_date }}</p>
+            </div>
+            <p >{{ replycomment.text }}</p>
+            </div>
+{% endfor %}
+
+</div>
+    {% endfor %}
+
+{% endblock %}
+
+{% block javascript %}
+
+
+    <script src="{% static 'fonts/fontawosem/all.js' %}"></script>
+
+{% endblock %}
